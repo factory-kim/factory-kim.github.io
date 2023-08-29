@@ -1,11 +1,20 @@
-import { test_info, algorithm, result_images } from '../data/love/love_info.js';
+import { test_info, algorithm } from '../data/1/1_meta.js';
+import { cover_page_info, questions } from '../data/1/1_test_kor.js';
 
-export function getStartImagePath(test_name) {
-    const path = `../res/${test_name}_start_image.jpg`
+export function getQuestions(test_id, language) {
+    return questions
+}
+
+export function getCoverPageInfo(test_id, language) {
+    return cover_page_info
+}
+
+export function getStartImagePath(test_id) {
+    const path = `../res/${test_id}_start_image.jpg`
     return path
 }
 
-export function getTestData(test_name) {
+export function getTestMetaData(test_id) {
     //return eval(`${test_name}_test_info`)
     return test_info
 }
