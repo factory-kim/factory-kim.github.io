@@ -1,0 +1,48 @@
+/* Add this CSS to your <style> section or external stylesheet */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+main {
+    width: 80%;
+}
+
+#questionContainer {
+    text-align: center;
+}
+
+#buttonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#buttonContainer button {
+    margin: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#buttonContainer button:hover {
+    background-color: pink;
+}
+
+#progressBar {
+    width: 100%;
+    height: 20px;
+    background-color: lightgray;
+    margin-top: 20px;
+    position: relative;
+}
+
+#progress {
+    width: 0;
+    height: 100%;
+    background-color: green;
+    transition: width 0.3s ease;
+}
