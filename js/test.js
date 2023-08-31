@@ -1,11 +1,13 @@
 import { getQuestions } from './util.js';
 
 // Get references to the HTML elements
+const mainContainer = document.getElementById('mainContainer')
 const questionNumberElement = document.getElementById('questionNumber');
 const questionTextElement = document.getElementById('questionText');
 const button1 = document.getElementById('button1');
 const button2 = document.getElementById('button2');
-
+const loading = document.getElementById("loading");
+const ad = document.getElementById("ad");
 
 // Sample questions and question numbers
 var test_id = null
@@ -26,9 +28,24 @@ function updateQuestion() {
 
         const progressPercent = ((currentQuestionIndex + 1) / questions.length) * 100;
         document.getElementById('progress').style.width = `${progressPercent}%`;
+    } else {
+        showLoading()
     }
 }
 
+// Loading
+function showLoading() {
+    mainContainer.style.display = "none";
+    loading.style.display = "block";
+    
+    setTimeout(() => {
+        loading.style.display = "none",
+        //ad.style.display = "block"
+        window.location.href = "result.html"
+    }, 2000);
+}
+
+// Setup
 function addEventOnAnswerButtons() {
     // Event listener for Button 1
     button1.addEventListener('click', () => {
