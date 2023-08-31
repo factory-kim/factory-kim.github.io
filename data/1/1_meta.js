@@ -1,6 +1,6 @@
 export const test_info = {
-    testID: 1, // test unique ID
-    language: ["kor", "eng", "chn", "jpn"], // language support
+    test_id: 1, // unique ID
+    supported_languages: ["kor", "eng", "chn", "jpn"],
     total_number_of_questions: 8
 }
 
