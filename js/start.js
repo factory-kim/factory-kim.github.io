@@ -14,7 +14,7 @@ function setupInformation(test_info, test_id, lan) {
     title.innerText = test_info.title
     subtitle.innerText = test_info.subtitle
     description.innerText = test_info.description
-    start_image.src = getStartImagePath(test_id, language)
+    start_image.src = getStartImagePath(test_id, lan)
 }
 
 function addEventStartButton() {
@@ -27,9 +27,9 @@ function init() {
     test_id = 1 // FIX ME
     lan = 'kor'
 
-    const test_info = getCoverPageInfo(test_id, language)
+    const test_info = getCoverPageInfo(test_id, lan)
 
-    setupInformation(test_info, test_id, language)
+    setupInformation(test_info, test_id, lan)
     addEventStartButton()
 }
 
