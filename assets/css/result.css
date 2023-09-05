@@ -21,7 +21,7 @@
 
 /* Adjust image styling */
 .component img {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
 }
 
@@ -32,72 +32,18 @@
     margin-bottom: 20px;
 }
 
-/* Container for the three side-by-side components */
-.components-container {
-    display: flex;
-    justify-content: space-between;
-}
-
 /* Style for each component */
-.component {
+/* .component {
     flex: 1;
     text-align: center;
     margin: 0 10px;
-}
-
-/* Style for small text and bold small text */
-.small-text, .bold-small-text {
-    font-size: 14px;
-    color: #666;
-    margin: 5px 0;
-}
-
-/* Style for bold small text */
-.bold-small-text {
-    font-weight: bold;
-}
+} */
 
 /* Style for section with horizontally stacked elements */
 .section {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-/* Style for the container of horizontally stacked elements */
-.horizontal-stack {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%; /* Expand to full width of the section */
-    max-width: 1200px; /* Adjust as needed */
-}
-
-/* Style for each element in the horizontal stack */
-.element {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-/* Style for the container of horizontally stacked elements */
-.horizontal-stack {
-    display: flex; /* This ensures horizontal stacking */
-    justify-content: space-between; /* This adds space between elements */
-}
-
-/* Style for each element in the horizontal stack */
-.element {
-    padding: 10px;
-    border: 1px solid #ccc;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
 }
 
 .container {
@@ -116,16 +62,6 @@
     max-width: 1200px; /* Adjust as needed */
     padding: 20px;
     border: 1px solid #ccc;
-}
-
-.left, .center, .right {
-    padding: 10px;
-    border: 1px solid #ccc;
-    flex: 1;
-}
-
-.center {
-    text-align: center;
 }
 
 .grid-container {
