@@ -81,3 +81,51 @@
     padding: 20px;
     border: 1px solid #ccc;
 }
+
+/*section 3*/
+/* Style for section 3 */
+.section3 {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Style for the auto-sizing image */
+.auto-sizing-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Style for the circular buttons */
+.circular-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.circular-button {
+    width: 100px;
+    height: 100px;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+/* Style for the rectangular button */
+.rectangular-button {
+    margin-top: 20px;
+}
+
+.rectangular-button button {
+    padding: 10px 20px;
+    background-color: #28A745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
