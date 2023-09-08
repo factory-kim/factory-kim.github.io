@@ -47,7 +47,7 @@ function showLoading() {
 
 // Go to next page
 function goToNextPage() {
-    const type =  'angry' // getType()
+    const type =  'angry' //TODO: getType()
     window.location.href = "result.html?test_id=" + test_id + "&lan=" + lan + "&type=" + type
 }
 

@@ -18,6 +18,7 @@ var type = null
 
 var result_info =  null
 
+// Util
 function findValueByKey(array, keyToFind, valueToFind) {
     for (const item of array) {
         if (item[keyToFind] === valueToFind) {
@@ -27,6 +28,13 @@ function findValueByKey(array, keyToFind, valueToFind) {
     return null; // Return null if the key-value pair is not found
 }
 
+function assertResultInfo() {
+    if (result_info == null) {
+        console.log("Error at getting result data")
+    }
+}
+
+// Setup
 function getProductInfoByIndex(product_idx, product_info) {
     return product_idx.map((idx) => {
         // Check if idx is valid (within the range of the product_info array)
@@ -85,13 +93,6 @@ function receiveDataFromPreviousPage() {
     type = window.location.search.substring(1).split("&")[2].split("=")[1];
 }
 
-function assertResultInfo() {
-    if (result_info == null) {
-        console.log("Error at getting result data")
-    }
-}
-
-// Initial question update
 function init() {
     receiveDataFromPreviousPage()
     setupResultInfo(test_id, lan)
