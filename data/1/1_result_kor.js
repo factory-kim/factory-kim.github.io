@@ -1,5 +1,21 @@
 export const result_info = {
-    result_pretext: "당신의 타입의",
+    type_pretext: "당신의 타입의",
+    product_pretext: "당신에게 추천하는 제품은",
+    type_name_mapping: [
+        {
+            type: "sexy",
+            name: "섹시섹시"
+        },
+        {
+            type: "shy",
+            name: "샤이샤이"
+        },
+        {
+            type: "angry",
+            name: "앵그리"
+        },
+    ],
+    
     result_images_mapping: [
         {
             type: "sexy",
@@ -18,7 +34,7 @@ export const result_info = {
     product_mapping: [
         {
             type: "sexy",
-            product_idx: [1,2,3]
+            product_idx: [1,2]
         },
         {
             type: "shy",
@@ -34,17 +50,17 @@ export const result_info = {
         {
             img: "1_product_1.jpg", 
             name: "This is perfume 1",
-            description: "love perfume 1"
+            description: "love perfume 1 description"
         },
         {
             img: "1_product_2.jpg", 
             name: "This is perfume 2",
-            description: "love perfume 2"
+            description: "love perfume 2 description"
         },
         {
             img: "1_product_3.jpg", 
             name: "This is perfume 3",
-            description: "love perfume 3"
+            description: "love perfume 3 description"
         },
     ],
 
