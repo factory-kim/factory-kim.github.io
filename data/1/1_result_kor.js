@@ -15,7 +15,7 @@ export const result_info = {
             name: "앵그리"
         },
     ],
-    
+
     result_images_mapping: [
         {
             type: "sexy",
@@ -74,6 +74,11 @@ export const result_info = {
             type: "shy",
             best: "sexy",
             worst: "angry"
+        },
+        {
+            type: "angry",
+            best: "sexy",
+            worst: "shy"
         }
     ]
 }

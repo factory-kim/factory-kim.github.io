@@ -16,6 +16,11 @@ export function getStartImagePath(test_id) {
     return path
 }
 
+export function getImagePath(imgName) {
+    const path = `../res/${imgName}`
+    return path
+}
+
 export function getTestMetaData(test_id) {
     //return eval(`${test_name}_test_info`)
     return test_info

@@ -32,13 +32,6 @@
     margin-bottom: 20px;
 }
 
-/* Style for each component */
-/* .component {
-    flex: 1;
-    text-align: center;
-    margin: 0 10px;
-} */
-
 /* Style for section with horizontally stacked elements */
 .section {
     display: flex;
@@ -58,7 +51,7 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
+    grid-template-columns: repeat(2, 1fr); /* Three equal-width columns */
     gap: 20px; /* Gap between columns */
 }
 

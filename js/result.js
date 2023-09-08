@@ -1,4 +1,4 @@
-import { getResultInfo } from './util.js';
+import { getResultInfo, getImagePath } from './util.js';
 
 // Get references to the HTML elements
 const typePretext = document.getElementById('typePretext');
@@ -7,6 +7,9 @@ const typeImg = document.getElementById('typeImg')
 
 const productPretext = document.getElementById('productPretext');
 const productList = document.getElementsByClassName('product')
+
+const bestImg = document.getElementById('bestImg')
+const worstImg = document.getElementById('worstImg')
 
 // Sample questions and question numbers
 var test_id = null
@@ -38,31 +41,37 @@ function getProductInfoByIndex(product_idx, product_info) {
 function setupType(info) {
     typePretext.innerText = info.type_pretext
     typeName.innerText = findValueByKey(info.type_name_mapping, 'type', type).name
-    typeImg.src = findValueByKey(info.result_images_mapping, 'type', type).img
+    const image_name = findValueByKey(info.result_images_mapping, 'type', type).img
+    typeImg.src = getImagePath(image_name)
 }
 
 function setupProduct(product_pretext, product_mapping, product_info) {
     productPretext.innerText = product_pretext
     const product_idx = findValueByKey(product_mapping, 'type', type).product_idx
-    const selectedProducts = getProductInfoByIndex(product_idx, product_info);
+    const selected_products = getProductInfoByIndex(product_idx, product_info);
 
     for (const [index, product] of Object.entries(productList)) {
-        const productName = product.querySelector('.product-name');
-        const productDescription = product.querySelector('.product-description');
-        const img = product.querySelector('.img')
+        const product_name = product.querySelector('.product-name');
+        const product_description = product.querySelector('.product-description');
+        const img = product.querySelector('img')
 
-        productName.innerText = selectedProducts[index].name
-        productDescription.innerHTML = selectedProducts[index].description
-        img.src = selectedProducts[index].img
+        product_name.innerText = selected_products[index].name
+        product_description.innerHTML = selected_products[index].description
+        img.src = getImagePath(selected_products[index].img)
     }
 }
 
-function setupBestWorst(best_worst) {
+function setupBestWorst(images_mapping, best_worst) {
+    const item = findValueByKey(best_worst, 'type', type)
+    const bestImgSrc = findValueByKey(images_mapping, 'type', item.best).img
+    const worstImgSrc = findValueByKey(images_mapping, 'type', item.worst).img
 
+    bestImg.src = getImagePath(bestImgSrc)
+    worstImg.src = getImagePath(worstImgSrc)
 }
 
 function setupShare() {
-
+    // TODO: JJ
 }
 
 
@@ -91,7 +100,7 @@ function init() {
 
     setupType(result_info)
     setupProduct(result_info.product_pretext, result_info.product_mapping, result_info.product_info)
-    setupBestWorst(result_info.best_worst)
+    setupBestWorst(result_info.result_images_mapping, result_info.best_worst)
     setupShare()
 }
 
