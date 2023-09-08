@@ -1,6 +1,6 @@
 import { test_info, algorithm } from '../data/1/1_meta.js';
 import { cover_page_info, questions } from '../data/1/1_test_kor.js';
-import { result_info } from '../data/1/1_test_kor.js';
+import { result_info } from '../data/1/1_result_kor.js';
 
 
 export function getQuestions(test_id, language) {
