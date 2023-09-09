@@ -1,49 +1,33 @@
 export const result_info = {
-    type_pretext: "당신의 타입의",
-    product_pretext: "당신에게 추천하는 제품은",
-    type_name_mapping: [
-        {
-            type: "sexy",
-            name: "섹시섹시"
-        },
-        {
-            type: "shy",
-            name: "샤이샤이"
-        },
-        {
-            type: "angry",
-            name: "앵그리"
-        },
-    ],
+    type_pretext: "나의 취향은",
+    product_pretext: "나의 취향에 맞는 제품 추천",
+    retry_pretext: "테스트 다시하기",
 
-    result_images_mapping: [
+    type_info: [
         {
             type: "sexy",
-            img: "1_result_kor_sexy.jpg"
+            name: "섹시섹시",
+            img: "1_result_kor_sexy.jpg",
+            product_idx: [1,2],
+            best: "shy",
+            worst: "angry"
         },
         {
             type: "shy",
-            img: "1_result_kor_shy.jpg"
+            name: "샤이샤이",
+            img: "1_result_kor_shy.jpg",
+            product_idx: [2,3],
+            best: "sexy",
+            worst: "angry"
         },
         {
             type: "angry",
-            img: "1_result_kor_angry.jpg"
-        }
-    ],
-
-    product_mapping: [
-        {
-            type: "sexy",
-            product_idx: [1,2]
+            name: "앵그리",
+            img: "1_result_kor_angry.jpg",
+            product_idx: [1,3],
+            best: "sexy",
+            worst: "shy"
         },
-        {
-            type: "shy",
-            product_idx: [2,3]
-        },
-        {
-            type: "angry",
-            product_idx: [1,3]
-        }
     ],
 
     product_info: [
@@ -63,22 +47,4 @@ export const result_info = {
             description: "love perfume 3 description"
         },
     ],
-
-    best_worst: [
-        {
-            type: "sexy",
-            best: "shy",
-            worst: "angry"
-        },
-        {
-            type: "shy",
-            best: "sexy",
-            worst: "angry"
-        },
-        {
-            type: "angry",
-            best: "sexy",
-            worst: "shy"
-        }
-    ]
 }

@@ -49,16 +49,20 @@ function getProductInfoByIndex(product_idx, product_info) {
 }
 
 function setupType(info) {
+    const item = findValueByKey(info.type_info, 'type', type)
+    
     typePretext.innerText = info.type_pretext
-    typeName.innerText = findValueByKey(info.type_name_mapping, 'type', type).name
-    const image_name = findValueByKey(info.result_images_mapping, 'type', type).img
-    typeImg.src = getImagePath(image_name)
+    typeName.innerText = item.name
+    typeImg.src = getImagePath(item.img)
 }
 
-function setupProduct(product_pretext, product_mapping, product_info) {
-    productPretext.innerText = product_pretext
-    const product_idx = findValueByKey(product_mapping, 'type', type).product_idx
-    const selected_products = getProductInfoByIndex(product_idx, product_info);
+function setupProduct(info) {
+    const type_item = findValueByKey(info.type_info, 'type', type)
+
+    productPretext.innerText = info.product_pretext
+
+    const product_idx = type_item.product_idx
+    const selected_products = getProductInfoByIndex(product_idx, info.product_info);
 
     for (const [index, product] of Object.entries(productList)) {
         const product_name = product.querySelector('.product-name');
@@ -66,15 +70,16 @@ function setupProduct(product_pretext, product_mapping, product_info) {
         const img = product.querySelector('img')
 
         product_name.innerText = selected_products[index].name
-        product_description.innerHTML = selected_products[index].description
+        product_description.innerText = selected_products[index].description
         img.src = getImagePath(selected_products[index].img)
     }
 }
 
-function setupBestWorst(images_mapping, best_worst) {
-    const item = findValueByKey(best_worst, 'type', type)
-    const bestImgSrc = findValueByKey(images_mapping, 'type', item.best).img
-    const worstImgSrc = findValueByKey(images_mapping, 'type', item.worst).img
+function setupBestWorst(info) {
+    const item = findValueByKey(info.type_info, 'type', type)
+
+    const bestImgSrc = findValueByKey(info.type_info, 'type', item.best).img
+    const worstImgSrc = findValueByKey(info.type_info, 'type', item.worst).img
 
     bestImg.src = getImagePath(bestImgSrc)
     worstImg.src = getImagePath(worstImgSrc)
@@ -85,7 +90,8 @@ function setupShare() {
 }
 
 
-function addEventStartButton() {
+function addEventStartButton(info) {
+    retryButton.innerText = info.retry_pretext
     retryButton.addEventListener("click", function(e){
         window.location.href = "start.html"
     });
@@ -108,10 +114,10 @@ function init() {
     assertResultInfo()
 
     setupType(result_info)
-    setupProduct(result_info.product_pretext, result_info.product_mapping, result_info.product_info)
-    setupBestWorst(result_info.result_images_mapping, result_info.best_worst)
+    setupProduct(result_info)
+    setupBestWorst(result_info)
     setupShare()
-    addEventStartButton()
+    addEventStartButton(result_info)
 }
 
 init();
