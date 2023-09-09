@@ -11,6 +11,8 @@ const productList = document.getElementsByClassName('product')
 const bestImg = document.getElementById('bestImg')
 const worstImg = document.getElementById('worstImg')
 
+const retryButton = document.getElementById('retryButton')
+
 // Sample questions and question numbers
 var test_id = null
 var lan = null
@@ -83,6 +85,12 @@ function setupShare() {
 }
 
 
+function addEventStartButton() {
+    retryButton.addEventListener("click", function(e){
+        window.location.href = "start.html"
+    });
+}
+
 function setupResultInfo() {
     result_info = getResultInfo(test_id, lan)
 }
@@ -103,6 +111,7 @@ function init() {
     setupProduct(result_info.product_pretext, result_info.product_mapping, result_info.product_info)
     setupBestWorst(result_info.result_images_mapping, result_info.best_worst)
     setupShare()
+    addEventStartButton()
 }
 
 init();
