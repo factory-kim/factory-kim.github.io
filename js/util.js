@@ -1,5 +1,7 @@
 import { test_info, algorithm } from '../data/1/1_meta.js';
 import { cover_page_info, questions } from '../data/1/1_test_kor.js';
+import { result_info } from '../data/1/1_result_kor.js';
+
 
 export function getQuestions(test_id, language) {
     return questions
@@ -14,7 +16,16 @@ export function getStartImagePath(test_id) {
     return path
 }
 
+export function getImagePath(imgName) {
+    const path = `../res/${imgName}`
+    return path
+}
+
 export function getTestMetaData(test_id) {
     //return eval(`${test_name}_test_info`)
     return test_info
+}
+
+export function getResultInfo(test_id, language) {
+    return result_info
 }

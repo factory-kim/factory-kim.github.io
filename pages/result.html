@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/result.css">
+    <title>Result Page</title>
+</head>
+
+<body>
+    <section class="section1">
+        <div class="component">
+            <p id="typePretext" class="small-text">Your Type is</p>
+            <h2 id="typeName" class="large-text">Sexy Businessman</h2>
+            <img id='typeImg' src="../res/1_start_image.jpg" alt="Large Image">
+        </div>
+    </section>
+    <section class="section2">
+        <div class="component">
+        <h2 id="productPretext" class="medium-text">Product Recommedation</h2>
+        <div class="grid-container">
+            <div class="column product">
+                <img src="../res/sample_image.jpg">
+                <p class="small-text product-name">Small Text 1</p>
+                <p class="bold-text product-description">Bold Text 1</p>
+            </div>
+            <div class="column product">
+                <img src="../res/sample_image.jpg">
+                <p class="small-text product-name">Small Text 2</p>
+                <p class="bold-text product-description">Bold Text 2</p>
+            </div>
+        </div>
+    </div>
+    </section>
+    <section class="section3">
+        <div class="grid-container">
+            <div class="auto-sizing-image column">
+                <img id='bestImg' src="../res/1_start_image.jpg" alt="Best and Worst Matches">
+            </div>
+            <div class="auto-sizing-image column">
+                <img id='worstImg' src="../res/1_start_image.jpg" alt="Best and Worst Matches">
+            </div>
+        </div>
+        <div class="circular-buttons">
+            <div class="circular-button">1</div>
+            <div class="circular-button">2</div>
+            <div class="circular-button">3</div>
+        </div>
+        <div class="rectangular-button">
+            <button id='retryButton'>Retry Button</button>
+        </div>
+    </section>
+    <script type="module" src="../js/result.js"></script>
+</body>
+
+</html>
