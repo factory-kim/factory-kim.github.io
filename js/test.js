@@ -41,14 +41,8 @@ function showLoading() {
     setTimeout(() => {
         loading.style.display = "none",
         //ad.style.display = "block"
-        goToNextPage()
+        window.location.href = "result.html"
     }, 2000);
-}
-
-// Go to next page
-function goToNextPage() {
-    const type =  'angry' //TODO: getType()
-    window.location.href = "result.html?test_id=" + test_id + "&lan=" + lan + "&type=" + type
 }
 
 // Setup
