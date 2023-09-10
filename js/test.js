@@ -1,7 +1,7 @@
 import { getQuestions, getAlgorithm } from './util.js';
 
 // Get references to the HTML elements
-const mainContainer = document.getElementById('mainContainer')
+const mainContainer = document.getElementById('mainContainer');
 const questionNumberElement = document.getElementById('questionNumber');
 const questionTextElement = document.getElementById('questionText');
 const button1 = document.getElementById('button1');
@@ -23,7 +23,7 @@ function updateQuestion() {
         const currentQuestion = questions[currentQuestionIndex];
         questionNumberElement.textContent = `Question ${currentQuestionIndex + 1}:`;
         questionTextElement.textContent = currentQuestion.question;
-        
+
         // Update answer buttons
         button1.textContent = currentQuestion.answers[0];
         button2.textContent = currentQuestion.answers[1];
@@ -39,11 +39,11 @@ function updateQuestion() {
 function showLoading() {
     mainContainer.style.display = "none";
     loading.style.display = "block";
-    
+
     setTimeout(() => {
         loading.style.display = "none",
         //ad.style.display = "block"
-        goToNextPage()
+        window.location.href = "result.html"
     }, 2000);
 }
 
@@ -56,7 +56,7 @@ function goToNextPage() {
 // Get Type
 function getType() {
     const algorithm = getAlgorithm()
-    
+
     const count_of_ones = selectedButtonNumbers.reduce((count, currentValue) => {
         return count + (currentValue === 1 ? 1 : 0);
     }, 0);
@@ -68,7 +68,7 @@ function getType() {
             break
         }
     }
-    
+
     return algorithm.types[i]
 }
 

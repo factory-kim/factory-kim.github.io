@@ -50,7 +50,7 @@ function getProductInfoByIndex(product_idx, product_info) {
 
 function setupType(info) {
     const item = findValueByKey(info.type_info, 'type', type)
-    
+
     typePretext.innerText = info.type_pretext
     typeName.innerText = item.name
     typeImg.src = getImagePath(item.img)
