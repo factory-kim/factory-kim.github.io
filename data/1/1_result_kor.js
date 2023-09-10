@@ -32,17 +32,17 @@ export const result_info = {
 
     product_info: [
         {
-            img: "1_product_1.jpg", 
+            img: "1_product_1.jpg",
             name: "This is perfume 1",
             description: "love perfume 1 description"
         },
         {
-            img: "1_product_2.jpg", 
+            img: "1_product_2.jpg",
             name: "This is perfume 2",
             description: "love perfume 2 description"
         },
         {
-            img: "1_product_3.jpg", 
+            img: "1_product_3.jpg",
             name: "This is perfume 3",
             description: "love perfume 3 description"
         },

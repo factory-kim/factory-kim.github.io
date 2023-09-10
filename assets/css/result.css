@@ -39,16 +39,6 @@
     align-items: center;
 }
 
-.horizontal-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px; /* Adjust as needed */
-    padding: 20px;
-    border: 1px solid #ccc;
-}
-
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Three equal-width columns */
