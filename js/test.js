@@ -1,4 +1,4 @@
-import { getQuestions } from './util.js';
+import { getQuestions, getAlgorithm } from './util.js';
 
 // Get references to the HTML elements
 const mainContainer = document.getElementById('mainContainer');
@@ -14,6 +14,8 @@ var test_id = null
 var lan = null
 var questions = []
 var currentQuestionIndex = 0;
+
+const selectedButtonNumbers = [];
 
 // Function to update the question and question number
 function updateQuestion() {
@@ -45,16 +47,43 @@ function showLoading() {
     }, 2000);
 }
 
+// Go to next page
+function goToNextPage() {
+    const type =  getType()
+    window.location.href = "result.html?test_id=" + test_id + "&lan=" + lan + "&type=" + type
+}
+
+// Get Type
+function getType() {
+    const algorithm = getAlgorithm()
+
+    const count_of_ones = selectedButtonNumbers.reduce((count, currentValue) => {
+        return count + (currentValue === 1 ? 1 : 0);
+    }, 0);
+
+    let i = 0
+    for (; i < algorithm.num.length; i++) {
+        const diff = count_of_ones - algorithm.num[i]
+        if (diff <= 1) { // 1 이하로 차이나야 함
+            break
+        }
+    }
+
+    return algorithm.types[i]
+}
+
 // Setup
 function addEventOnAnswerButtons() {
     // Event listener for Button 1
     button1.addEventListener('click', () => {
+        selectedButtonNumbers[currentQuestionIndex] = 1
         currentQuestionIndex++;
         updateQuestion();
     });
 
     // Event listener for Button 2
     button2.addEventListener('click', () => {
+        selectedButtonNumbers[currentQuestionIndex] = 2
         currentQuestionIndex++;
         updateQuestion();
     });

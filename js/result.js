@@ -78,11 +78,11 @@ function setupProduct(info) {
 function setupBestWorst(info) {
     const item = findValueByKey(info.type_info, 'type', type)
 
-    const bestImgSrc = findValueByKey(info.type_info, 'type', item.best).img
-    const worstImgSrc = findValueByKey(info.type_info, 'type', item.worst).img
+    const best_img_src = findValueByKey(info.type_info, 'type', item.best).img
+    const worst_img_src= findValueByKey(info.type_info, 'type', item.worst).img
 
-    bestImg.src = getImagePath(bestImgSrc)
-    worstImg.src = getImagePath(worstImgSrc)
+    bestImg.src = getImagePath(best_img_src)
+    worstImg.src = getImagePath(worst_img_src)
 }
 
 function setupShare() {

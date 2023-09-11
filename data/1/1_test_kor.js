@@ -1,7 +1,7 @@
 export const cover_page_info = {
-    title: "섹스 취향 테스트",
-    subtitle: "나는 어떤 취향을 갖고 있을까?",
-    description: "설명하기 어려웠던 나의 취향!\n 당신의 취향을 알려드립니다"
+  title: "섹스 취향 테스트",
+  subtitle: "나는 어떤 취향을 갖고 있을까?",
+  description: "설명하기 어려웠던 나의 취향!\n 당신의 취향을 알려드립니다"
 }
 
 export const questions = [
@@ -44,6 +44,5 @@ export const questions = [
   {
     question: "한여름밤, 당신은 연인과 늦은 밤 해변을 거닐고 있습니다. 파도 소리와 바닷바람이 당신의 신체와 마음을 여유롭게 만들어줍니다.",
     answers: ["서로의 손을 잡으며 감정적인 연결", "모래 위에 누워 별을 보며 즐거운 시간"],
-  },
+  }
 ];
-

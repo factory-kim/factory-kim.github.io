@@ -11,6 +11,10 @@ export function getCoverPageInfo(test_id, language) {
     return cover_page_info
 }
 
+export function getAlgorithm() {
+    return algorithm
+}
+
 export function getStartImagePath(test_id) {
     const path = `../res/${test_id}_start_image.jpg`
     return path
