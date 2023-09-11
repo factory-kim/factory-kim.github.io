@@ -87,9 +87,21 @@ function setupBestWorst(info) {
 
 function setupShare() {
     setupCopyUrl()
+    setupShareToX()
 }
 
 function setupShareToX() {
+    twttr.widgets.createShareButton(
+        "https:\/\/dev.twitter.com\/web\/tweet-button",
+        document.getElementById("tweet-container"),
+        {
+            size: "large",
+            text: "Try this out!",
+            hashtags: "sex, quiz",
+            via: "twitterdev",
+            related: "twitterapi,twitter"
+        }
+    );
 }
 
 function setupCopyUrl() {
