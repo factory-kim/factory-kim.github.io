@@ -86,7 +86,60 @@ function setupBestWorst(info) {
 }
 
 function setupShare() {
-    // TODO: JJ
+    setupCopyUrl()
+    setupShareToX()
+}
+
+function setupShareToX() {
+    twttr.widgets.createShareButton(
+        "https:\/\/dev.twitter.com\/web\/tweet-button",
+        document.getElementById("tweet-container"),
+        {
+            size: "large",
+            text: "Try this out!",
+            hashtags: "sex, quiz",
+            via: "twitterdev",
+            related: "twitterapi,twitter"
+        }
+    );
+}
+
+function setupCopyUrl() {
+    document.addEventListener('DOMContentLoaded', function () {
+        const copyButton = document.getElementById('copy-url-button');
+
+        copyButton.addEventListener('click', function () {
+            const urlValue = copyButton.getAttribute('value');
+            const protocol = window.location.protocol; // e.g., "http:" or "https:"
+            const hostname = window.location.hostname; // e.g., "www.example.com"
+            const port = window.location.port; // e.g., "80" or "443" (if not specified, this will be an empty string)
+
+            // Combine the protocol, hostname, and port to create the root address
+            const rootAddress = `${protocol}//${hostname}${port ? `:${port}` : ''}`;
+            const urlToCopy = `${rootAddress}/pages${urlValue}`;
+
+            // Create a temporary text area element
+            const textArea = document.createElement('textarea');
+            textArea.value = urlToCopy;
+
+            // Add the text area to the document
+            document.body.appendChild(textArea);
+
+            // Select the text within the text area
+            textArea.select();
+
+            try {
+                // Copy the selected text to the clipboard
+                document.execCommand('copy');
+                console.log('URL copied to clipboard:', urlToCopy);
+            } catch (err) {
+                console.error('Failed to copy URL:', err);
+            } finally {
+                // Remove the temporary text area
+                document.body.removeChild(textArea);
+            }
+        });
+    });
 }
 
 
