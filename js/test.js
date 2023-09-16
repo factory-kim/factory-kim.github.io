@@ -8,6 +8,7 @@ const button1 = document.getElementById('button1');
 const button2 = document.getElementById('button2');
 const loading = document.getElementById("loading");
 const ad = document.getElementById("ad");
+const remainQuestion = document.getElementById('remainQuestion');
 
 // Sample questions and question numbers
 var test_id = null
@@ -21,8 +22,9 @@ const selectedButtonNumbers = [];
 function updateQuestion() {
     if (currentQuestionIndex < questions.length) {
         const currentQuestion = questions[currentQuestionIndex];
-        questionNumberElement.textContent = `Question ${currentQuestionIndex + 1}:`;
+        questionNumberElement.textContent = `Q ${currentQuestionIndex + 1}`;
         questionTextElement.textContent = currentQuestion.question;
+        remainQuestion.textContent = `${currentQuestionIndex+1} / ${questions.length}`;
 
         // Update answer buttons
         button1.textContent = currentQuestion.answers[0];
