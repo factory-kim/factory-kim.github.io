@@ -32,6 +32,7 @@ function updateQuestion() {
         document.getElementById('progress').style.width = `${progressPercent}%`;
     } else {
         showLoading()
+        goToNextPage()
     }
 }
 
