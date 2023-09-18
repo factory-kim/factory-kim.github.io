@@ -6,6 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/result.css">
     <title>Result Page</title>
+    <meta property="og:title" content="Quiz Result">
+    <meta property="og:description" content="See what your result is!">
+    <meta property="og:image" content="https://factory-kim.github.io/res/1_result_kor_pleasure_and_joy_seeker.jpg">
+    <meta property="og:url" content="https://factory-kim.github.io/pages/start">
+    
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.4.0/kakao.min.js"
+        integrity="sha384-mXVrIX2T/Kszp6Z0aEWaA8Nm7J6/ZeWXbL8UpGRjKwWe56Srd/iyNmWMBhcItAjH"
+        crossorigin="anonymous"></script>
+    <script>
+        Kakao.init('4a6bfdf64b61166ba6d3c1951dec067d'); // 사용하려는 앱의 JavaScript 키 입력
+        console.log(Kakao.isInitialized());
+    </script>
+
 </head>
 
 <body>
@@ -51,7 +64,7 @@
                     Tweet
                 </a>
             </div>
-            <div class="circular-button">3</div>
+            <div class="circular-button" id="kakao-share-button">Kakao</div>
         </div>
         <div class="rectangular-button">
             <button id='retryButton'>Retry Button</button>
