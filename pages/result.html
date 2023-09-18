@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/result.css">
     <title>Result Page</title>
+<!-- For Card -->
     <meta property="og:title" content="Quiz Result">
     <meta property="og:description" content="See what your result is!">
     <meta property="og:image" content="https://factory-kim.github.io/res/1_result_kor_pleasure_and_joy_seeker.jpg">
     <meta property="og:url" content="https://factory-kim.github.io/pages/start">
-    
+
+    <!-- For Kakao -->
     <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.4.0/kakao.min.js"
         integrity="sha384-mXVrIX2T/Kszp6Z0aEWaA8Nm7J6/ZeWXbL8UpGRjKwWe56Srd/iyNmWMBhcItAjH"
         crossorigin="anonymous"></script>
@@ -18,6 +20,24 @@
         Kakao.init('4a6bfdf64b61166ba6d3c1951dec067d'); // 사용하려는 앱의 JavaScript 키 입력
         console.log(Kakao.isInitialized());
     </script>
+
+    <!-- For Twitter -->
+    <script>window.twttr = (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+
+            t._e = [];
+            t.ready = function (f) {
+                t._e.push(f);
+            };
+
+            return t;
+        }(document, "script", "twitter-wjs"));</script>
 
 </head>
 
@@ -57,13 +77,7 @@
         </div>
         <div class="circular-buttons">
             <div class="circular-button" id="copy-url-button" value="/start.html">URL</div>
-            <div class="circular-button" id="twitter-share-button">
-                <a class="twitter-share-button"
-                    href="https://twitter.com/intent/tweet?url=https://factory-kim.github.io/pages/start&text=Try%20this%20out!"
-                    data-size="large" data-text="Try this out!" data-url="https://factory-kim.github.io/pages/start">
-                    Tweet
-                </a>
-            </div>
+            <div class="circular-button" id="twitter-share-button">Tweet</div>
             <div class="circular-button" id="kakao-share-button">Kakao</div>
         </div>
         <div class="rectangular-button">
@@ -71,6 +85,7 @@
         </div>
     </section>
     <script type="module" src="../js/result.js"></script>
+    <script async src="https://platform.twitter.com/widgets.js"></script>
 </body>
 
 </html>
