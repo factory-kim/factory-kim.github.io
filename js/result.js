@@ -182,7 +182,7 @@ function shareKakaoMessage(item) {
 function addEventStartButton(info) {
     retryButton.innerText = info.retry_pretext
     retryButton.addEventListener("click", function(e){
-        window.location.href = "start.html"
+        window.location.href = "../index.html"
     });
 }
 
