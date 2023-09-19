@@ -85,23 +85,24 @@ function setupBestWorst(info) {
     worstImg.src = getImagePath(worst_img_src)
 }
 
-function setupShare() {
+function setupShare(info) {
     setupCopyUrl()
     setupShareToX()
+    setupKakaoShare(info)
 }
 
 function setupShareToX() {
-    twttr.widgets.createShareButton(
-        "https:\/\/dev.twitter.com\/web\/tweet-button",
-        document.getElementById("tweet-container"),
-        {
-            size: "large",
-            text: "Try this out!",
-            hashtags: "sex, quiz",
-            via: "twitterdev",
-            related: "twitterapi,twitter"
-        }
-    );
+    // twttr.widgets.createShareButton(
+    //     "https:\/\/dev.twitter.com\/web\/tweet-button",
+    //     document.getElementById("tweet-container"),
+    //     {
+    //         size: "large",
+    //         text: "Try this out!",
+    //         hashtags: "sex, quiz",
+    //         via: "twitterdev",
+    //         related: "twitterapi,twitter"
+    //     }
+    // );
 }
 
 function setupCopyUrl() {
@@ -142,6 +143,41 @@ function setupCopyUrl() {
     });
 }
 
+function setupKakaoShare(info) {
+    document.addEventListener('DOMContentLoaded', function () {
+        const kakaoShareButton = document.getElementById('kakao-share-button');
+
+        kakaoShareButton.addEventListener('click', function () {
+            const item = findValueByKey(info.type_info, 'type', type);
+            shareKakaoMessage(item)
+        });
+    });
+}
+
+function shareKakaoMessage(item) {
+    var message = {};
+    message.objectType = 'feed';
+    message.content = {};
+    message.content.title = item.name;
+    message.content.description = '#테스트 #심리테스트';
+    message.content.imageUrl = 'http://factory-kim.github.io/res/${item.img}'
+    message.content.link = {
+        // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
+        mobileWebUrl: 'https://factory-kim.github.io',
+        webUrl: 'https://factory-kim.github.io',
+    };
+    message.buttons = [
+        {
+            title: 'View On Web',
+            link: {
+                mobileWebUrl: 'https://factory-kim.github.io',
+                webUrl: 'https://factory-kim.github.io',
+            },
+        }];
+
+    Kakao.Share.sendDefault(message);
+}
+
 
 function addEventStartButton(info) {
     retryButton.innerText = info.retry_pretext
@@ -169,7 +205,7 @@ function init() {
     setupType(result_info)
     setupProduct(result_info)
     setupBestWorst(result_info)
-    setupShare()
+    setupShare(result_info)
     addEventStartButton(result_info)
 }
 
