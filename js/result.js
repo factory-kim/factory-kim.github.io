@@ -153,7 +153,7 @@ function shareKakaoMessage(item) {
     message.content = {};
     message.content.title = item.name;
     message.content.description = '#테스트 #심리테스트';
-    message.content.imageUrl = 'http://factory-kim.github.io/res/${item.img}'
+    message.content.imageUrl = `${typeImg.src}`
     message.content.link = {
         // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
         mobileWebUrl: 'https://factory-kim.github.io',
