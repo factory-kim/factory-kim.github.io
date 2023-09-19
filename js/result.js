@@ -110,14 +110,7 @@ function setupCopyUrl() {
         const copyButton = document.getElementById('copy-url-button');
 
         copyButton.addEventListener('click', function () {
-            const urlValue = copyButton.getAttribute('value');
-            const protocol = window.location.protocol; // e.g., "http:" or "https:"
-            const hostname = window.location.hostname; // e.g., "www.example.com"
-            const port = window.location.port; // e.g., "80" or "443" (if not specified, this will be an empty string)
-
-            // Combine the protocol, hostname, and port to create the root address
-            const rootAddress = `${protocol}//${hostname}${port ? `:${port}` : ''}`;
-            const urlToCopy = `${rootAddress}/pages${urlValue}`;
+            const urlToCopy = window.location.href;
 
             // Create a temporary text area element
             const textArea = document.createElement('textarea');
