@@ -147,14 +147,7 @@ function setupCopyUrl() {
         const copyButton = document.getElementById('copy-url-button');
 
         copyButton.addEventListener('click', function () {
-            const urlValue = copyButton.getAttribute('value');
-            const protocol = window.location.protocol; // e.g., "http:" or "https:"
-            const hostname = window.location.hostname; // e.g., "www.example.com"
-            const port = window.location.port; // e.g., "80" or "443" (if not specified, this will be an empty string)
-
-            // Combine the protocol, hostname, and port to create the root address
-            const rootAddress = `${protocol}//${hostname}${port ? `:${port}` : ''}`;
-            const urlToCopy = `${rootAddress}/pages${urlValue}`;
+            const urlToCopy = window.location.href;
 
             // Create a temporary text area element
             const textArea = document.createElement('textarea');
@@ -197,7 +190,7 @@ function shareKakaoMessage(item) {
     message.content = {};
     message.content.title = item.name;
     message.content.description = '#테스트 #심리테스트';
-    message.content.imageUrl = 'http://factory-kim.github.io/res/${item.img}'
+    message.content.imageUrl = `${typeImg.src}`
     message.content.link = {
         // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
         mobileWebUrl: 'https://factory-kim.github.io',
@@ -219,7 +212,7 @@ function shareKakaoMessage(item) {
 function addEventStartButton(info) {
     retryButton.innerText = info.retry_pretext
     retryButton.addEventListener("click", function(e){
-        window.location.href = "start.html"
+        window.location.href = "../index.html"
     });
 }
 

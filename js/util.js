@@ -16,7 +16,7 @@ export function getAlgorithm() {
 }
 
 export function getStartImagePath(test_id) {
-    const path = `../res/${test_id}_start_image.jpg`
+    const path = `./res/${test_id}_start_image.jpg`
     return path
 }
 
