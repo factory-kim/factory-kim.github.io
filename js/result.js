@@ -87,20 +87,57 @@ function setupBestWorst(info) {
 
 function setupShare(info) {
     setupCopyUrl()
-    setupShareToX()
+    setupShareToX(info)
     setupKakaoShare(info)
 }
 
-function setupShareToX() {
+function tweetWithQueries(url, text, hashtags, related) {
+    // Base URL for Twitter intent
+    var twitterIntentURL = "https://twitter.com/intent/tweet";
+
+    // Construct the query parameters
+    var queryParams = [];
+
+    if (url) {
+        queryParams.push("url=" + encodeURIComponent(url));
+    }
+
+    if (text) {
+        queryParams.push("text=" + encodeURIComponent(text));
+    }
+
+    if (hashtags) {
+        queryParams.push("hashtags=" + encodeURIComponent(hashtags));
+    }
+
+    if (related) {
+        queryParams.push("related=" + encodeURIComponent(related));
+    }
+
+    // Combine the base URL and query parameters
+    var tweetURL = twitterIntentURL + "?" + queryParams.join("&");
+
+    // Open the Twitter intent URL in a new window or tab
+    window.open(tweetURL, "_blank");
+}
+
+function setupShareToX(info) {
+    const tweetButton = document.getElementById('twitter-share-button');
+    tweetButton.addEventListener('click', function () {
+        const item = findValueByKey(info.type_info, 'type', type);
+        tweetWithQueries(window.location.href, `My type is ${item.type}, what's yours?`, "intimacy,quiz", "quiz,quizzes");
+    });
+
+    // const item = findValueByKey(info.type_info, 'type', type);
+
     // twttr.widgets.createShareButton(
-    //     "https:\/\/dev.twitter.com\/web\/tweet-button",
-    //     document.getElementById("tweet-container"),
+    //     window.location.href,
+    //     document.getElementById("twitter-share-button"),
     //     {
     //         size: "large",
-    //         text: "Try this out!",
-    //         hashtags: "sex, quiz",
-    //         via: "twitterdev",
-    //         related: "twitterapi,twitter"
+    //         text: `My type is ${item.type}, what's yours?`,
+    //         hashtags: "intimacy,quiz",
+    //         related: "quiz,quizzes"
     //     }
     // );
 }
