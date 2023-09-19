@@ -19,7 +19,7 @@ function setupInformation(test_info, test_id, lan) {
 
 function addEventStartButton() {
     start_button.addEventListener("click", function(e){
-        window.location.href = "test.html?test_id=" + test_id + "&lan=" + lan
+        window.location.href = "pages/test.html?test_id=" + test_id + "&lan=" + lan
     });
 }
 

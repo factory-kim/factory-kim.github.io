@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/index.css">
-    <title>Clickable List</title>
+    <title>Your Webpage Title</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR">
+    <link rel="stylesheet" href="./assets/css/start.css">
 </head>
-
 <body>
-    <ul class="item-list">
-        <li class="clickable-item">
-            <a href="../pages/start.html">
-                <img src="../res/1_start_image.jpg" alt="Item 1">
-                <span>Item 1</span>
-            </a>
-        </li>
-        <li class="clickable-item">
-            <a href="#">
-                <img src="../res/sample_image.jpg" alt="Item 2">
-                <span>Item 2</span>
-            </a>
-        </li>
-        <!-- Add more items as needed -->
-    </ul>
+    <div class="header">
+        <h2 class="subtitle">Your Subtitle</h2>
+        <h1 class="title">Your Title</h1>
+    </div>
 
-    <script src="../js/index.js"></script>
+    <div class="content">
+        <img class="responsive-image" src="./res/sample_image.jpg" alt="Your Image">
+    </div>
+
+    <div class="footer">
+        <button class="start-button">START</button>
+        <p class="description">Description area with small font size.</p>
+    </div>
+    <script type="module" src="./js/start.js"></script>
 </body>
-
 </html>
