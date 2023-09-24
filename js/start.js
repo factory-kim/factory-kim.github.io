@@ -8,7 +8,7 @@ const start_button  = document.querySelector(".start-button")
 var test_id = null
 var lan = null
 
-function setupInformation(test_info, test_id, lan) {
+function setupInformation(test_id, lan) {
     start_image.src = getStartTopImagePath(test_id)
     bottom_image.src = getStartBottomImagePath(test_id)
 }
@@ -25,7 +25,7 @@ function init() {
 
     // const test_info = getCoverPageInfo(test_id, lan)
 
-    setupInformation(test_info, test_id, lan)
+    setupInformation(test_id, lan)
     addEventStartButton()
 }
 

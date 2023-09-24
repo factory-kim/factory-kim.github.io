@@ -34,7 +34,6 @@ function updateQuestion() {
         document.getElementById('progress').style.width = `${progressPercent}%`;
     } else {
         showLoading()
-        goToNextPage()
     }
 }
 
@@ -44,9 +43,8 @@ function showLoading() {
     loading.style.display = "block";
 
     setTimeout(() => {
-        loading.style.display = "none",
-        //ad.style.display = "block"
-        window.location.href = "result.html"
+        loading.style.display = "none"
+        goToNextPage()
     }, 2000);
 }
 
