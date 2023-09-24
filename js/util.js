@@ -2,6 +2,15 @@ import { test_info, algorithm } from '../data/1/1_meta.js';
 import { cover_page_info, questions } from '../data/1/1_test_kor.js';
 import { result_info } from '../data/1/1_result_kor.js';
 
+export function getStartTopImagePath(test_id) {
+    const path = `./res/${test_id}_start_image.jpg`
+    return path
+}
+
+export function getStartBottomImagePath(test_id) {
+    const path = `./res/${test_id}_start_image.jpg`
+    return path
+}
 
 export function getQuestions(test_id, language) {
     return questions
@@ -13,11 +22,6 @@ export function getCoverPageInfo(test_id, language) {
 
 export function getAlgorithm() {
     return algorithm
-}
-
-export function getStartImagePath(test_id) {
-    const path = `./res/${test_id}_start_image.jpg`
-    return path
 }
 
 export function getImagePath(imgName) {
