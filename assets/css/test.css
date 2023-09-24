@@ -24,6 +24,7 @@ main {
 
 #questionNumber {
     font-size: 30px;
+    color: #aa89ff;
 }
 
 #questionText {
@@ -32,6 +33,7 @@ main {
     font-size: 19px;
 }
 
+/* Button */
 #buttonContainer {
     display: flex;
     flex-direction: column;
@@ -52,23 +54,20 @@ main {
 }
 
 #buttonContainer button:hover {
-    color: #000;
-    background-color: #e5fb60;
+    background-color: #aa89ff;
 }
 
-/* Bottom Content */
+/* Progress Bar */
 #bottomContainer {
-    width: 320px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center; /* Align items vertically */
-    padding-left: 10px;
-    padding-right: 10px;
     background-color: #f0f0f0;
 }
 
 #progressBar {
-    width: 250px; /* Adjust width as needed */
+    width: 275px; /* Adjust width as needed */
     height: 10px;
     background-color: lightgray;
 }
@@ -76,17 +75,19 @@ main {
 #progress {
     width: 0%; /* Adjust width for the progress */
     height: 100%;
-    background-color: #000;
+    background-color: #aa89ff;
     transition: width 0.3s ease;
 }
 
 #remainQuestion {
     font-size: 18px;
+    color: #aa89ff;
 }
 
+/* Loading */
 #loading {
     border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid #3498db; /* Blue */
+    border-top: 16px solid #aa89ff; /* Blue */
     border-radius: 50%;
     width: 120px;
     height: 120px;
