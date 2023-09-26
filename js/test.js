@@ -108,4 +108,9 @@ function init() {
     updateQuestion();
 }
 
-init();
+document.addEventListener('DOMContentLoaded', (event) => {
+    init();
+});
+
+
+
