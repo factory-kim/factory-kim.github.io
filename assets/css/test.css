@@ -7,7 +7,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: "Noto Sans KR", sans-serif;
-    background-color: #f0f0f0;
+    background-color: #fff;
 }
 
 main {
@@ -31,6 +31,7 @@ main {
     margin-top: 36px; /* Add margin at the top */
     margin-bottom: 0px;
     font-size: 19px;
+    height: 73px;
 }
 
 /* Button */
@@ -63,13 +64,13 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center; /* Align items vertically */
-    background-color: #f0f0f0;
+    background-color: #fff;
 }
 
 #progressBar {
     width: 275px; /* Adjust width as needed */
     height: 10px;
-    background-color: lightgray;
+    background-color: #f0f0f0;
 }
 
 #progress {
@@ -86,8 +87,8 @@ main {
 
 /* Loading */
 #loading {
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid #aa89ff; /* Blue */
+    border: 16px solid #fff;
+    border-top: 16px solid #aa89ff;
     border-radius: 50%;
     width: 120px;
     height: 120px;
