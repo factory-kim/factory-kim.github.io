@@ -29,4 +29,7 @@ function init() {
     addEventStartButton()
 }
 
-init();
+document.addEventListener('DOMContentLoaded', (event) => {
+    init();
+});
+
